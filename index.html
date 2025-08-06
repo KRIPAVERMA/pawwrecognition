@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paw Recognition</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Navbar -->
@@ -13,14 +13,10 @@
       <img src="https://cdn-icons-png.flaticon.com/128/8347/8347745.png" alt="paw icon" />
       <h1>Paw Recognition</h1>
     </div>
-    </button>
-    <!-- Inside nav-buttons -->
     <div class="nav-buttons">
       <button onclick="window.location.href='contact.html'">Contact Us</button>
       <button onclick="window.location.href='about.html'">About Us</button>
     </div>
-    
-
   </div>
 
   <!-- Main Content -->
@@ -31,8 +27,6 @@
         <h2>Why Dog Meals Matter</h2>
         <img src="https://cdn-icons-png.flaticon.com/128/616/616408.png" alt="Dog icon" />
       </div>
-      
-    
       <p>
         Dogs, like humans, require the right balance of nutrients to stay healthy. But not all dogs are the same — different breeds have different dietary needs depending on their size, activity level, and genetics.
       </p>
@@ -52,7 +46,6 @@
         Our platform helps you recognize your dog's breed and provides tailored meal recommendations based on their age, size, and needs.
       </p>
     </div>
-    
 
     <!-- Right Section -->
     <div class="right-box">
@@ -95,7 +88,7 @@
   <div class="paw-container" id="pawContainer"></div>
 
   <!-- Script -->
-  <script type="module">
+  <script>
     const signInBtn = document.getElementById('signInBtn');
     const signUpBtn = document.getElementById('signUpBtn');
     const signInForm = document.getElementById('sign-in-form');
@@ -113,7 +106,7 @@
 
     window.redirectToCamera = function(event) {
       event.preventDefault();
-      window.location.href = "/camera.html";
+      window.location.href = "camera.html";
     };
 
     // Add paw icons
@@ -133,7 +126,5 @@
       count++;
     }
   </script>
-  
-
 </body>
 </html>
