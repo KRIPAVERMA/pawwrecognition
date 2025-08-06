@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paw Recognition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="header">
+    <div class="site-title">
+      <img src="https://cdn-icons-png.flaticon.com/128/8347/8347745.png" alt="paw icon" />
+      <h1>Paw Recognition</h1>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="window.location.href='contact.html'">Contact Us</button>
+      <button onclick="window.location.href='about.html'">About Us</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="content-section">
+    <!-- Left Section -->
+    <div class="left-info">
+      <div class="left-heading">
+        <h2>Why Dog Meals Matter</h2>
+        <img src="https://cdn-icons-png.flaticon.com/128/616/616408.png" alt="Dog icon" />
+      </div>
+      <p>
+        Dogs, like humans, require the right balance of nutrients to stay healthy. But not all dogs are the same — different breeds have different dietary needs depending on their size, activity level, and genetics.
+      </p>
+      <p>
+        For example, a <strong>Labrador Retriever</strong> may need a high-protein, joint-supportive diet due to its active nature and risk of hip dysplasia, while a <strong>Chihuahua</strong> benefits from small-kibble food that's easier to chew and digest.
+      </p>
+      <p>
+        Providing breed-specific meals helps in:
+        <ul>
+          <li>⚖️ Maintaining ideal body weight</li>
+          <li>🦴 Supporting joint and bone health</li>
+          <li>💡 Improving skin, coat, and energy levels</li>
+          <li>🛡️ Reducing risk of breed-specific health issues</li>
+        </ul>
+      </p>
+      <p>
+        Our platform helps you recognize your dog's breed and provides tailored meal recommendations based on their age, size, and needs.
+      </p>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-box">
+      <div id="auth-container">
+        <div class="toggle-buttons">
+          <button id="signInBtn">Sign In</button>
+          <button id="signUpBtn">Sign Up</button>
+        </div>
+
+        <!-- Sign In Form -->
+        <div id="sign-in-form" class="form-section">
+          <h2>Sign In</h2>
+          <form onsubmit="redirectToCamera(event)">
+            <label>Email:</label>
+            <input type="email" required />
+            <label>Password:</label>
+            <input type="password" required />
+            <button type="submit">Sign In</button>
+          </form>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div id="sign-up-form" class="form-section hidden">
+          <h2>Sign Up</h2>
+          <form onsubmit="redirectToCamera(event)">
+            <label>Full Name:</label>
+            <input type="text" required />
+            <label>Email:</label>
+            <input type="email" required />
+            <label>Password:</label>
+            <input type="password" required />
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Paw Icons -->
+  <div class="paw-container" id="pawContainer"></div>
+
+  <!-- Script -->
+  <script>
+    const signInBtn = document.getElementById('signInBtn');
+    const signUpBtn = document.getElementById('signUpBtn');
+    const signInForm = document.getElementById('sign-in-form');
+    const signUpForm = document.getElementById('sign-up-form');
+
+    signInBtn.addEventListener('click', () => {
+      signInForm.classList.remove('hidden');
+      signUpForm.classList.add('hidden');
+    });
+
+    signUpBtn.addEventListener('click', () => {
+      signInForm.classList.add('hidden');
+      signUpForm.classList.remove('hidden');
+    });
+
+    window.redirectToCamera = function(event) {
+      event.preventDefault();
+      window.location.href = "camera.html";
+    };
+
+    // Add paw icons
+    const pawContainer = document.getElementById("pawContainer");
+    let count = 0;
+    while (count < 20) {
+      const top = Math.random() * window.innerHeight;
+      const left = Math.random() * window.innerWidth;
+      if (top < 100 && left < 250) continue;
+
+      const paw = document.createElement("img");
+      paw.src = "https://cdn-icons-png.flaticon.com/128/4225/4225925.png";
+      paw.className = "bg-paw";
+      paw.style.top = `${top}px`;
+      paw.style.left = `${left}px`;
+      pawContainer.appendChild(paw);
+      count++;
+    }
+  </script>
+</body>
+</html>

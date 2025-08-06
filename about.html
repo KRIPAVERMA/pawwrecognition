@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #57C7B8;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: linear-gradient(135deg, #9B552A, #9B2A95, #57C785);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 10;
+    }
+
+    .site-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .site-title img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .site-title h1 {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .back-btn {
+      background: white;
+      color: #333;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .about-content {
+      margin-top: 100px;
+      max-width: 800px;
+      background: linear-gradient(135deg, #9B552A, #9B2A95, #57C785);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .about-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="header">
+    <div class="site-title">
+      <img src="https://cdn-icons-png.flaticon.com/128/8347/8347745.png" alt="Paw Icon">
+      <h1>Paw Recognition</h1>
+    </div>
+    <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="about-content">
+    <h2>About Us 🐾</h2>
+    <p>
+      At Paw Recognition, we’re committed to improving dog health through intelligent diet planning. Our platform recognizes breed-specific needs and tailors weekly nutrition plans to ensure dogs live happier, healthier lives.
+    </p>
+    <p>
+      Whether you're a new pet parent or a lifelong dog lover, our tools help you provide the best care, starting from diet recognition to tracking health routines.
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Capture Dog Image</title>
+  <style>
+    body {
+      background-color: #57C7B8;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      color: white;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.2rem;
+      color: white;
+    }
+
+    .dog-image {
+      width: 300px;
+      max-width: 90%;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    video, canvas {
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .controls {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #9B552A, #9B2A95, #57C785);
+      color: white;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    canvas {
+      display: none;
+    }
+
+    #seeDietBtn {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Capture Dog Image</h1>
+
+  <img
+    class="dog-image"
+    src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-180680638-676f621f720bc.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*"
+    alt="Dog Reference Image"
+  />
+
+  <div class="controls">
+    <button onclick="startCamera()">Start Camera</button>
+    <button onclick="captureImage()">Capture</button>
+  </div>
+
+  <video id="video" width="320" height="240" autoplay muted playsinline></video>
+  <canvas id="canvas" width="320" height="240"></canvas>
+
+  <!-- SEE DIET BUTTON -->
+  <a href="diet-plan.html">
+    <button id="seeDietBtn">See Diet</button>
+  </a>
+
+  <script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const seeDietBtn = document.getElementById('seeDietBtn');
+    const context = canvas.getContext('2d');
+
+    let stream;
+
+    async function startCamera() {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+        video.style.display = 'block';
+        canvas.style.display = 'none';
+        seeDietBtn.style.display = 'none';
+      } catch (error) {
+        alert('Camera access denied or not available.');
+      }
+    }
+
+    function captureImage() {
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      video.style.display = 'none';
+      canvas.style.display = 'block';
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop()); // Stop camera
+      }
+      seeDietBtn.style.display = 'inline-block'; // Show "See Diet" button
+    }
+  </script>
+</body>
+</html>

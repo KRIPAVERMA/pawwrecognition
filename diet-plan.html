@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diet Plan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #57C7B8;
+      color: white;
+      padding: 30px 20px;
+    }
+
+    h1.title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+    }
+
+    .centered-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .diet-card {
+      background: linear-gradient(135deg, #9B552A, #9B2A95, #57C785);
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      width: 220px;
+      height: 250px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .diet-card:hover {
+      transform: scale(1.03);
+    }
+
+    .diet-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .meal-list {
+      list-style-type: none;
+      padding-left: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .meal-time {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">Diet Plan</h1>
+
+  <!-- Row 1: Day 1 to Day 4 - centered -->
+  <div class="centered-row">
+    <div class="diet-card">
+      <h2>Day 1</h2>
+      <ul class="meal-list">
+        <li><span class="meal-time">9 AM:</span> Boiled chicken with rice</li>
+        <li><span class="meal-time">12 PM:</span> Carrot & pumpkin mash</li>
+        <li><span class="meal-time">4 PM:</span> Dry kibble with fish oil</li>
+        <li><span class="meal-time">8 PM:</span> Plain curd with oats</li>
+      </ul>
+    </div>
+
+    <div class="diet-card">
+      <h2>Day 2</h2>
+      <ul class="meal-list">
+        <li><span class="meal-time">9 AM:</span> Egg & boiled potato</li>
+        <li><span class="meal-time">12 PM:</span> Chicken broth with rice</li>
+        <li><span class="meal-time">4 PM:</span> Small meat chunks</li>
+        <li><span class="meal-time">8 PM:</span> Fruit treats</li>
+      </ul>
+    </div>
+
+    <div class="diet-card">
+      <h2>Day 3</h2>
+      <ul class="meal-list">
+        <li><span class="meal-time">9 AM:</span> Rice with scrambled eggs</li>
+        <li><span class="meal-time">12 PM:</span> Boiled peas & carrots</li>
+        <li><span class="meal-time">4 PM:</span> Chicken liver pieces</li>
+        <li><span class="meal-time">8 PM:</span> Yogurt & flax seeds</li>
+      </ul>
+    </div>
+
+    <div class="diet-card">
+      <h2>Day 4</h2>
+      <ul class="meal-list">
+        <li><span class="meal-time">9 AM:</span> Fish and boiled rice</li>
+        <li><span class="meal-time">12 PM:</span> Green bean salad</li>
+        <li><span class="meal-time">4 PM:</span> Oatmeal with blueberries</li>
+        <li><span class="meal-time">8 PM:</span> Dry kibble with liver oil</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Row 2: Day 5 to Day 7 - centered -->
+  <div class="centered-row">
+    <div class="diet-card">
+      <h2>Day 5</h2>
+      <ul class="meal-list">
+        <li><span class="meal-time">9 AM:</span> Chicken & brown rice</li>
+        <li><span class="meal-time">12 PM:</span> Boiled spinach mash</li>
+        <li><span class="meal-time">4 PM:</span> Egg whites & veggies</li>
+        <li><span class="meal-time">8 PM:</span> Sweet potato chunks</li>
+      </ul>
+    </div>
+
+    <div class="diet-card">
+      <h2>Day 6</h2>
+      <ul class="meal-list">
+        <li><span class="meal-time">9 AM:</span> Turkey with oatmeal</li>
+        <li><span class="meal-time">12 PM:</span> Mashed peas & carrots</li>
+        <li><span class="meal-time">4 PM:</span> Bone broth with rice</li>
+        <li><span class="meal-time">8 PM:</span> Cheese cubes (small)</li>
+      </ul>
+    </div>
+
+    <div class="diet-card">
+      <h2>Day 7</h2>
+      <ul class="meal-list">
+        <li><span class="meal-time">9 AM:</span> Scrambled eggs & sweet potato</li>
+        <li><span class="meal-time">12 PM:</span> Apple slices with peanut butter</li>
+        <li><span class="meal-time">4 PM:</span> Dry kibble & water</li>
+        <li><span class="meal-time">8 PM:</span> Dog-safe biscuit</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
